@@ -15,18 +15,30 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/login.js", "pages/_document.js", "pages/index.js"  ],
+    "**/*.tsx",
+    "pages/login.js",
+    "pages/_document.js",
+    "pages/index.js",
+    ".next/types/**/*.ts"
+, "components/ui/aurora-background.jsx", "components/ui/badge.jsx", "components/ui/input.jsx", "components/ui/typewriter-effect.jsx"  ],
   "exclude": [
     "node_modules"
   ],
   "baseUrl": ".",
-    "paths": {
-      "@/*": ["*"]
-    }
+  "paths": {
+    "@/*": [
+      "*"
+    ]
+  }
 }

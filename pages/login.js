@@ -167,7 +167,7 @@ export default function LoginForm() {
         setdEmail('');
         setdPassword('');
         setTimeout(() => {
-            router.push("/dashboarddeployer")
+            router.push("/dashboard")
         }, 1000);
     };
     return (
