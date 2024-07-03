@@ -31,7 +31,7 @@
     "pages/_document.js",
     "pages/index.js",
     ".next/types/**/*.ts"
-, "components/ui/aurora-background.jsx", "components/ui/badge.jsx", "components/ui/input.jsx", "components/ui/typewriter-effect.jsx"  ],
+, "components/ui/aurora-background.jsx", "components/ui/badge.jsx", "components/ui/input.jsx", "components/ui/typewriter-effect.jsx", "components/ui/tooltip.jsx", "components/ui/select.jsx"  ],
   "exclude": [
     "node_modules"
   ],

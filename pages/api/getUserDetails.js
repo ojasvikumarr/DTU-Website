@@ -1,6 +1,8 @@
 // pages/api/getUserDetails.js
+import { decode } from 'punycode';
 import connectDb from '../../middleware/mongoose';
 import deployer from "../../models/deployer"
+import Intern from "../../models/intern"
 import jwt from "jsonwebtoken";
 
 const handler = async (req, res) => {
@@ -8,11 +10,14 @@ const handler = async (req, res) => {
     try {
 
       const token = req.body.token; // assuming id is stored in the token
-      // console.log(token) ;
+      console.log(token) ;
       const decoded = jwt.verify(token , process.env.JWT_SECRET);
-      // console.log(decoded);
-      const user = await deployer.findOne({email : decoded.email});
-      // console.log(user);
+      const deployeruser = await deployer.findOne({email : decoded.email}) 
+      console.log(deployeruser);
+      const internuser = await Intern.findOne({email : decoded.email});
+      console.log(internuser);
+      const user = deployeruser || internuser ;
+      console.log(user);
       if (!user) {
         return res.status(404).json({ error: 'User not found' });
       }

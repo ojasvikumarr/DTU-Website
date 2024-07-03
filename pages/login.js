@@ -119,9 +119,9 @@ export default function LoginForm() {
 
         setEmail('');
         setPassword('');
-        // setTimeout(() => {
-        //     router.push("/login")
-        // }, 1000);
+        setTimeout(() => {
+            router.push("/details")
+        }, 1000);
     };
     const DeployerhandleSubmit = async (e) => {
         e.preventDefault();
