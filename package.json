@@ -17,12 +17,12 @@
     "@radix-ui/react-slot": "^1.1.0",
     "@radix-ui/react-tabs": "^1.1.0",
     "@radix-ui/react-tooltip": "^1.1.2",
-    "@tabler/icons-react": "^3.7.0",
+    "@tabler/icons-react": "^3.10.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "crypto-js": "^4.2.0",
     "date-fns": "^3.6.0",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.2.14",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.396.0",
     "mongoose": "^8.4.3",
@@ -37,7 +37,7 @@
     "react-toastify": "^10.0.5",
     "react-top-loading-bar": "^2.3.1",
     "simplex-noise": "^4.0.1",
-    "tailwind-merge": "^2.3.0",
+    "tailwind-merge": "^2.4.0",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {

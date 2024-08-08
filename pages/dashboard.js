@@ -24,9 +24,38 @@ import { IoBagCheckSharp } from "react-icons/io5";
 import { CgTrashEmpty } from "react-icons/cg";
 import { MdAccountCircle } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
+import { MultiStepLoader as Loader } from "../components/ui/multi-step-loader";
+import { IconSquareRoundedX } from "@tabler/icons-react";
 
 export default function Dashboard() {
   const ref = useRef();
+  const loadingStates = [
+    {
+      text: "Buying a condo",
+    },
+    {
+      text: "Travelling in a flight",
+    },
+    {
+      text: "Meeting Tyler Durden",
+    },
+    {
+      text: "He makes soap",
+    },
+    {
+      text: "We goto a bar",
+    },
+    {
+      text: "Start a fight",
+    },
+    {
+      text: "We like it",
+    },
+    {
+      text: "Welcome to F**** C***",
+    },
+  ];
+
   const { user, loading } = useUser();
   const [objects, setObjects] = useState([]);
   const [sidebar, setsidebar] = useState(false)
@@ -71,12 +100,14 @@ export default function Dashboard() {
 
     }
   }, [user]);;
-  if (!intern || intern.length === 0) {
-    return <div>Loading...</div>;
+  if (!intern || intern.length === 0 ) {
+    return <div>
+      <Loader loadingStates={loadingStates} loading={loading} duration={2000} />
+    </div>;
   }
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div><Loader loadingStates={loadingStates} loading={loading} duration={2000} /></div>;
   }
 
   if (!user) {
@@ -118,7 +149,7 @@ export default function Dashboard() {
           </div>}
         </span>
         <header className="sticky top-0 z-10 text-gray-600 body-font">
-          <div className=" bg-slate-50 flex py-4 px-7 flex-col md:flex-row md:justify-start justify-center items-center shadow-md">
+          <div className=" bg-slate-50 flex py-4 px-7 flex-col md:flex-row  justify-between items-center shadow-md">
             {/* <div className="logo mx-5">
             <Link href="/">
               <Image
@@ -135,7 +166,7 @@ export default function Dashboard() {
             >
               {/* <HiOutlineShoppingCart className="text-2xl" /> */}
             </button>
-            <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
+            {/* <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center">
               <Link href={"/tshirts"} className="mr-5 hover:text-red-900">
                 T-shirts
               </Link>
@@ -151,13 +182,15 @@ export default function Dashboard() {
               <Link href={"/zipper"} className="mr-5 hover:text-gray-900">
                 Zipper
               </Link>
-            </nav>
-            <div className="cursor-pointer z-100">
+            </nav> */
+            }
+            <h2 className="font-thin text-4xl">USIP Department</h2>
+            <div className="cursor-pointer r z-100">
               {/* <Input onChange={handleChange} value={search} name="search" id="search" placeholder="••••••••" type="text" /> */}
               <span onMouseOver={() => setDropdown(true)}  >
                 {user && <Link
                   href={"/account"}
-                  className="inline-flex items-center border-0  mx-2  focus:outline-none hover:bg-gray-200 rounded-full text-base mt-4 md:mt-0"
+                  className="inline-flex items-center border-0  mx-2 ight-0 focus:outline-none hover:bg-gray-200 rounded-full text-base mt-4 md:mt-0"
                 >
                   <MdAccountCircle className="text-3xl" />
                 </Link>}
@@ -359,7 +392,7 @@ export default function Dashboard() {
                                   </div>
                                 </div>
                               </td>
-                              <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">Monthly subscription</td>
+                              <td className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap">Monthly Period</td>
                               <td className="px-4 py-4 text-sm whitespace-nowrap">
                                 <div className="flex items-center gap-x-6">
                                   <button className="text-gray-500 transition-colors duration-200 dark:hover:text-indigo-500 dark:text-gray-300 hover:text-indigo-500 focus:outline-none">
@@ -372,7 +405,6 @@ export default function Dashboard() {
                                 </div>
                               </td>
                             </tr>)
-
                         })}
 
                       </tbody>
@@ -384,7 +416,7 @@ export default function Dashboard() {
             </div>
 
 
-            <div className="flex items-center justify-between mt-6">
+            <div className="flex items-center justify-between mt-14">
               <a href="#" className="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5 rtl:-scale-x-100">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />

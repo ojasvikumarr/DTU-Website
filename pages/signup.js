@@ -142,9 +142,9 @@ export default function SignupFormDemo() {
         setName('');
         setDepartment('');
         setPassword('');
-        // setTimeout(() => {
-        //     router.push("/login")
-        // }, 1000);
+        setTimeout(() => {
+            router.push("/login")
+        }, 1000);
     };
     const DeployerhandleSubmit = async (e) => {
         e.preventDefault();
@@ -192,9 +192,9 @@ export default function SignupFormDemo() {
         setdName('');
         setdDepartment('');
         setdPassword('');
-        // setTimeout(() => {
-        //     router.push("/login")
-        // }, 1000);
+        setTimeout(() => {
+            router.push("/login")
+        }, 1000);
     };
     return (
         <>
